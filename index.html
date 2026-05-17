@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous Breach</title>
+    <link
+    rel="icon"
+    type="image/png"
+    href="assets/images/icons/anonymous-icon.png"
+>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/terminal.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+    <!-- Fondo -->
+    <div class="background-overlay"></div>
+
+    <!-- Pantalla de inicio -->
+    <section id="start-screen">
+
+        <div class="logo-container">
+            <h1 class="title">
+                ANONYMOUS
+                <span>BREACH</span>
+            </h1>
+
+            <p class="subtitle">
+                Infiltra sistemas • Evita firewalls • Sobrevive
+            </p>
+        </div>
+
+        <div class="menu">
+
+            <input
+                type="text"
+                id="player-name"
+                placeholder="Ingresa tu alias..."
+                maxlength="15"
+            >
+
+            <button id="start-btn">
+                INICIAR MISIÓN
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- Pantalla principal -->
+    <main id="game-container" class="hidden">
+
+        <!-- Barra superior -->
+        <header id="hud">
+
+            <div class="hud-box">
+                <span>Nivel</span>
+                <h2 id="level">1</h2>
+            </div>
+
+            <div class="hud-box">
+                <span>Puntos</span>
+                <h2 id="score">0</h2>
+            </div>
+
+            <div class="hud-box">
+                <span>Tiempo</span>
+                <h2 id="timer">05</h2>
+            </div>
+
+            <div class="hud-box">
+                <span>Alias</span>
+                <h2 id="player-display">
+                    Anonymous
+                </h2>
+            </div>
+
+        </header>
+
+        <!-- Terminal -->
+        <section id="terminal-window">
+
+            <div id="terminal-header">
+
+                <div class="window-buttons">
+
+                    <span class="circle"></span>
+                    <span class="circle"></span>
+                    <span class="circle"></span>
+
+                </div>
+
+                <p>
+                    secure_connection@anonymous
+                </p>
+
+            </div>
+
+            <div id="terminal-output">
+
+                <p>> Iniciando sistema...</p>
+                <p>> Esperando conexión...</p>
+
+            </div>
+
+            <div id="terminal-input-container">
+
+                <span>> </span>
+
+                <input
+                    type="text"
+                    id="command-input"
+                    autocomplete="off"
+                    spellcheck="false"
+                    autofocus
+                >
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Pantalla Game Over -->
+    <section id="game-over-screen" class="hidden">
+
+    <h1>ACCESO DENEGADO</h1>
+
+    <p>
+        Has sido detectado por el administrador
+    </p>
+
+    <h2>
+        Puntuación:
+        <span id="final-score">
+            0
+        </span>
+    </h2>
+
+    <button id="restart-btn">
+        REINTENTAR
+    </button>
+
+    <section id="ranking-container">
+
+        <h2>
+            TOP ANONYMOUS
+        </h2>
+
+        <div id="ranking-list">
+
+        </div>
+
+    </section>
+
+</section>
+    
+
+    <!-- Audio -->
+
+    <!-- <audio
+        id="typing-sound"
+        src="assets/audio/typing.mp3"
+    ></audio>
+
+    <audio
+        id="success-sound"
+        src="assets/audio/success.mp3"
+    ></audio>
+
+    <audio
+        id="error-sound"
+        src="assets/audio/error.mp3"
+    ></audio>
+
+    <audio
+        id="alarm-sound"
+        src="assets/audio/alarm.mp3"
+    ></audio> -->
+
+
+    <!-- JS -->
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+<script src="js/supabase.js"></script>
+    <script src="js/commands.js"></script>
+    <!-- <script src="js/levels.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/ui.js"></script> -->
+    <script src="js/effects.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

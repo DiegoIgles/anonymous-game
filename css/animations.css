@@ -1,0 +1,270 @@
+/* =========================
+   TEMBLOR DE PANTALLA
+========================= */
+
+.shake{
+    animation:screenShake .25s infinite;
+}
+
+@keyframes screenShake{
+
+    0%{
+        transform:translate(0px,0px);
+    }
+
+    20%{
+        transform:translate(-4px,2px);
+    }
+
+    40%{
+        transform:translate(4px,-2px);
+    }
+
+    60%{
+        transform:translate(-3px,-3px);
+    }
+
+    80%{
+        transform:translate(3px,2px);
+    }
+
+    100%{
+        transform:translate(0px,0px);
+    }
+
+}
+
+
+
+/* =========================
+   GLITCH
+========================= */
+
+.glitch{
+    animation:glitchEffect .2s infinite;
+}
+
+@keyframes glitchEffect{
+
+    0%{
+        transform:translateX(0px);
+        filter:hue-rotate(0deg);
+    }
+
+    20%{
+        transform:translateX(-5px);
+        filter:hue-rotate(30deg);
+    }
+
+    40%{
+        transform:translateX(5px);
+        filter:hue-rotate(-30deg);
+    }
+
+    60%{
+        transform:translateX(-3px);
+        filter:hue-rotate(20deg);
+    }
+
+    80%{
+        transform:translateX(3px);
+        filter:hue-rotate(-20deg);
+    }
+
+    100%{
+        transform:translateX(0px);
+        filter:hue-rotate(0deg);
+    }
+
+}
+
+
+
+/* =========================
+   PARPADEO HACKER
+========================= */
+
+.flicker{
+    animation:flickerEffect 2s infinite;
+}
+
+@keyframes flickerEffect{
+
+    0%{
+        opacity:1;
+    }
+
+    5%{
+        opacity:.3;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    15%{
+        opacity:.5;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:1;
+    }
+
+}
+
+
+
+/* =========================
+   APARICIÓN SUAVE
+========================= */
+
+.fade-in{
+    animation:fadeIn .6s ease;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+
+/* =========================
+   PULSO VERDE
+========================= */
+
+.pulse{
+
+    animation:pulseEffect 1s infinite;
+}
+
+@keyframes pulseEffect{
+
+    0%{
+
+        box-shadow:
+        0 0 5px #00ff88;
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 30px #00ff88;
+
+    }
+
+    100%{
+
+        box-shadow:
+        0 0 5px #00ff88;
+
+    }
+
+}
+
+
+
+/* =========================
+   CURSOR TERMINAL
+========================= */
+
+.cursor::after{
+
+    content:"_";
+
+    animation:blink .8s infinite;
+
+}
+
+@keyframes blink{
+
+    0%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:1;
+    }
+
+}
+
+
+
+/* =========================
+   EFECTO TEXTO HACKER
+========================= */
+
+.hacker-text{
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    width:0;
+
+    animation:
+    typing 2s steps(30,end) forwards;
+}
+
+@keyframes typing{
+
+    from{
+        width:0;
+    }
+
+    to{
+        width:100%;
+    }
+
+}
+
+
+
+/* =========================
+   ALERTA ROJA
+========================= */
+
+.alert{
+
+    animation:alertFlash .5s infinite;
+}
+
+@keyframes alertFlash{
+
+    0%{
+
+        color:red;
+
+    }
+
+    50%{
+
+        color:white;
+
+    }
+
+    100%{
+
+        color:red;
+
+    }
+
+}

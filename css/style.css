@@ -1,0 +1,534 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+}
+
+body{
+    font-family: monospace;
+    background:#050505;
+    color:#00ff88;
+    overflow:hidden;
+    position:relative;
+}
+
+
+/* =========================
+   FONDO
+========================= */
+
+.background-overlay{
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(0,255,100,.08),
+        rgba(0,0,0,.95)
+    );
+
+    z-index:-1;
+}
+
+.background-overlay::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    repeating-linear-gradient(
+        transparent 0px,
+        rgba(255,255,255,.03) 1px,
+        transparent 2px
+    );
+
+    opacity:.2;
+}
+
+
+/* =========================
+   UTILIDADES
+========================= */
+
+.hidden{
+    display:none !important;
+}
+
+button{
+    cursor:pointer;
+    border:none;
+}
+
+input{
+    outline:none;
+}
+
+
+/* =========================
+   START SCREEN
+========================= */
+
+#start-screen{
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    gap:50px;
+}
+
+
+.logo-container{
+    text-align:center;
+}
+
+.title{
+    font-size:5rem;
+    letter-spacing:5px;
+
+    text-shadow:
+    0 0 10px #00ff88,
+    0 0 30px #00ff88;
+
+    margin-bottom:15px;
+}
+
+.title span{
+    display:block;
+
+    font-size:2rem;
+    color:#ffffff;
+
+    margin-top:10px;
+}
+
+.subtitle{
+    color:#aaa;
+    font-size:1rem;
+}
+
+
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    width:300px;
+}
+
+#player-name{
+
+    padding:15px;
+
+    background:#101010;
+
+    border:2px solid #00ff88;
+
+    color:#00ff88;
+
+    font-size:1rem;
+
+    text-align:center;
+}
+
+#player-name::placeholder{
+    color:#666;
+}
+
+
+#start-btn{
+
+    padding:15px;
+
+    background:#00ff88;
+
+    color:black;
+
+    font-size:1rem;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+#start-btn:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 20px #00ff88;
+}
+
+
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
+#game-container{
+
+    width:100%;
+    height:100vh;
+
+    padding:30px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:25px;
+}
+
+
+
+/* =========================
+   HUD
+========================= */
+
+#hud{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.hud-box{
+
+    flex:1;
+
+    min-width:150px;
+
+    background:#111;
+
+    border:1px solid #00ff88;
+
+    padding:15px;
+
+    text-align:center;
+
+    border-radius:10px;
+
+    box-shadow:
+    0 0 10px rgba(0,255,100,.3);
+
+}
+
+.hud-box span{
+
+    color:#888;
+
+    font-size:.8rem;
+
+}
+
+.hud-box h2{
+
+    margin-top:10px;
+
+    font-size:1.5rem;
+}
+
+
+
+/* =========================
+   TERMINAL
+========================= */
+
+#terminal-window{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+    background:#080808;
+
+    border:2px solid #00ff88;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 0 30px rgba(0,255,100,.2);
+
+}
+
+
+#terminal-header{
+
+    display:flex;
+
+    align-items:center;
+
+    padding:15px;
+
+    background:#111;
+
+    border-bottom:1px solid #00ff88;
+}
+
+
+.window-buttons{
+
+    display:flex;
+
+    gap:8px;
+
+    margin-right:15px;
+}
+
+
+.circle{
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+    background:#00ff88;
+}
+
+
+#terminal-header p{
+
+    color:#aaa;
+}
+
+
+
+#terminal-output{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:20px;
+
+    line-height:1.8;
+
+    font-size:1rem;
+}
+
+
+#terminal-output p{
+
+    margin-bottom:10px;
+}
+
+
+
+#terminal-input-container{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:15px;
+
+    border-top:1px solid #00ff88;
+
+    background:#111;
+}
+
+
+#terminal-input-container span{
+
+    font-size:1.2rem;
+}
+
+
+#command-input{
+
+    flex:1;
+
+    border:none;
+
+    background:transparent;
+
+    color:#00ff88;
+
+    font-size:1rem;
+}
+
+
+
+/* =========================
+   GAME OVER
+========================= */
+
+#game-over-screen{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+}
+
+#game-over-screen h1{
+
+    font-size:4rem;
+
+    color:red;
+
+    text-shadow:
+    0 0 20px red;
+}
+
+#game-over-screen p{
+
+    color:#aaa;
+}
+
+#game-over-screen h2{
+
+    margin-top:20px;
+}
+
+#restart-btn{
+
+    padding:15px 30px;
+
+    background:#00ff88;
+
+    color:black;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+#restart-btn:hover{
+
+    transform:scale(1.1);
+
+    box-shadow:
+    0 0 20px #00ff88;
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+.title{
+    font-size:2.5rem;
+}
+
+#game-container{
+    padding:15px;
+}
+
+.hud-box{
+    min-width:100%;
+}
+
+#terminal-output{
+    font-size:.9rem;
+}
+
+}
+
+/* =========================
+   RANKING
+========================= */
+
+#ranking-container{
+
+    margin-top:30px;
+
+    width:400px;
+
+    max-height:300px;
+
+    overflow-y:auto;
+
+    background:#111;
+
+    border:1px solid #00ff88;
+
+    border-radius:10px;
+
+    padding:15px;
+
+}
+
+#ranking-container h2{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    color:#00ff88;
+
+}
+
+.player-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:10px;
+
+    margin-bottom:8px;
+
+    border-bottom:1px solid rgba(
+        0,
+        255,
+        100,
+        .2
+    );
+
+}
+
+.rank-number{
+
+    font-weight:bold;
+
+    color:#00ff88;
+
+}
+
+.rank-name{
+
+    color:white;
+
+}
+
+.rank-score{
+
+    color:#00ff88;
+
+}
